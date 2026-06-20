@@ -1,0 +1,104 @@
+@import url("https://fonts.googleapis.com/css2?family=Jockey+One&display=swap");
+
+* {
+  margin: 0;
+  padding: 0;
+  box-sizing: border-box;
+  font-family: "Jockey One", sans-serif;
+}
+
+.gray {
+  color: #8e8e93;
+}
+
+.bg-gray{
+    background-color: #0001;
+}
+
+.red {
+  color: #ff383c;
+}
+
+body{
+    display: flex;
+    justify-content: center;
+    align-items: center;
+    width: 100%;
+    height: 100vh;
+}
+
+.container{
+    background: #fff;
+    width: 55vw;
+    height: 80vh;
+    border-radius: 20px;
+    display: flex;
+    justify-content: space-between;
+    box-shadow: 0px 0px 15px 0px rgba(0, 0, 0, 0.5);
+}
+
+.left, 
+.right{
+    width: 50%;
+    height: 100%;
+}
+
+.left{
+    padding: 2rem;
+    background-image: url(./auth-bg.png);
+    border-radius: 20px 0 0 20px;
+}
+
+.left h1{
+    font-size: 84px;
+    color: #fff;
+}
+
+.left p,
+.left a{
+    color: #fff;
+    font-size: 20px;
+}
+
+.right{
+    display: flex;
+    flex-direction: column;
+    justify-content: center;
+    padding: 2rem;
+}
+
+.input-group{
+    display: flex;
+    flex-direction: column;
+    margin-bottom: 1rem;
+}
+
+label{
+    font-size: 28px;
+}
+
+input{
+    border: 1px solid #000;
+    outline: none;
+    padding: .75rem;
+    font-size: 20px;
+    border-radius: 100px;
+}
+
+.form-btn{
+    color: #fff;
+    background: #00c3d0;
+    border: 1px solid #fff;
+    outline: none;
+    width: 100%;
+    padding: 0.75rem;
+    font-size: 20px;
+    border-radius: 100px;
+    transition: all 300ms;
+}
+
+.form-btn:hover{
+    color: #00c3d0;
+    background-color: #fff;
+    border: 1px solid #00c3d0;
+}
