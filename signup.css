@@ -7,24 +7,17 @@
   font-family: "Jockey One", sans-serif;
 }
 
-.gray {
-  color: #8e8e93 !important;
-}
-
-.bg-gray {
-  background-color: #0001 !important;
-}
-
-.red {
-  color: #ff383c !important;
-}
+.gray { color: #8e8e93 !important; }
+.bg-gray { background-color: #f4f4f4 !important; }
+.red { color: #ff383c !important; }
 
 body {
   display: flex;
   justify-content: center;
   align-items: center;
   width: 100%;
-  height: 100vh;
+  min-height: 100vh;
+  padding: 20px;
 }
 
 .container {
@@ -35,10 +28,10 @@ body {
   display: flex;
   justify-content: space-between;
   box-shadow: 0px 0px 15px 0px rgba(0, 0, 0, 0.5);
+  overflow: hidden;
 }
 
-.left,
-.right {
+.left, .right {
   width: 50%;
   height: 100%;
 }
@@ -46,16 +39,20 @@ body {
 .left {
   padding: 2rem;
   background-image: url(./auth-bg.png);
-  border-radius: 20px 0 0 20px;
+  background-size: cover;
+  background-position: center;
+  display: flex;
+  flex-direction: column;
+  justify-content: center;
 }
 
 .left h1 {
   font-size: 84px;
   color: #fff;
+  line-height: 1;
 }
 
-.left p,
-.left a {
+.left p, .left a {
   color: #fff;
   font-size: 20px;
 }
@@ -65,26 +62,25 @@ body {
   flex-direction: column;
   justify-content: center;
   padding: 2rem;
+  overflow-y: auto; /* Adds scroll inside the form if it's too long */
 }
 
 .input-group {
   display: flex;
   flex-direction: column;
-  margin-bottom: 1rem;
+  margin-bottom: 0.8rem;
 }
 
-label {
-  font-size: 28px;
-}
+label { font-size: 24px; }
 
-input {
-      box-shadow: 0px 0px 10px 0px rgba(0, 0, 0, 0.3);
-border: none;
-  /* border: 1px solid #000; */
+input, select {
+  box-shadow: 0px 0px 10px 0px rgba(0, 0, 0, 0.1);
+  border: 1px solid #eee;
   outline: none;
-  padding: 0.75rem;
-  font-size: 20px;
+  padding: 0.7rem;
+  font-size: 18px;
   border-radius: 100px;
+  width: 100%;
 }
 
 .form-btn {
@@ -97,6 +93,7 @@ border: none;
   font-size: 20px;
   border-radius: 100px;
   transition: all 300ms;
+  cursor: pointer;
 }
 
 .form-btn:hover {
@@ -105,12 +102,52 @@ border: none;
   border: 1px solid #00c3d0;
 }
 
-select {
-      box-shadow: 0px 0px 10px 0px rgba(0, 0, 0, 0.3);
-border: none;
-  /* border: 1px solid #000; */
-  outline: none;
-  padding: 0.75rem;
-  font-size: 20px;
-  border-radius: 100px;
+/* --- MEDIA QUERIES --- */
+
+@media (max-width: 1024px) {
+  .container {
+    width: 85vw;
+  }
+  .left h1 {
+    font-size: 60px;
+  }
+}
+
+@media (max-width: 768px) {
+  body {
+    align-items: flex-start;
+  }
+
+  .container {
+    flex-direction: column;
+    width: 95vw;
+    height: auto; /* Height must be auto to fit all inputs */
+    margin: 20px 0;
+  }
+
+  .left, .right {
+    width: 100%;
+  }
+
+  .left {
+    padding: 2.5rem 1.5rem;
+    text-align: center;
+  }
+
+  .left h1 {
+    font-size: 48px;
+  }
+
+  .right {
+    padding: 1.5rem;
+    overflow-y: visible;
+  }
+
+  label {
+    font-size: 20px;
+  }
+  
+  input, select {
+    padding: 0.6rem;
+  }
 }
