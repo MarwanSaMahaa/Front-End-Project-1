@@ -19,7 +19,7 @@ function createModal() {
 	createPopup.classList.toggle("hidden");
 }
 
-let API = "https://back-end-project-1-production.up.railway.app";
+let API = "https://back-end-project-1-production.up.railway.app/products-api";
 
 async function getProducts() {
 	let response = await fetch(`${API}/products`);
