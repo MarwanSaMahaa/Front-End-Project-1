@@ -62,7 +62,7 @@ body {
   flex-direction: column;
   justify-content: center;
   padding: 2rem;
-  overflow-y: auto; /* Adds scroll inside the form if it's too long */
+  overflow-y: auto;
 }
 
 .input-group {
@@ -71,7 +71,9 @@ body {
   margin-bottom: 0.8rem;
 }
 
-label { font-size: 24px; }
+label { 
+  font-size: 24px; 
+}
 
 input, select {
   box-shadow: 0px 0px 10px 0px rgba(0, 0, 0, 0.1);
@@ -102,7 +104,6 @@ input, select {
   border: 1px solid #00c3d0;
 }
 
-/* --- MEDIA QUERIES --- */
 
 @media (max-width: 1024px) {
   .container {
@@ -121,7 +122,7 @@ input, select {
   .container {
     flex-direction: column;
     width: 95vw;
-    height: auto; /* Height must be auto to fit all inputs */
+    height: auto;
     margin: 20px 0;
   }
 
