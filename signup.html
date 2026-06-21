@@ -10,11 +10,11 @@
     <div class="container">
       <div class="left">
         <h1>Sign Up</h1>
-        <p>Already have an account? Login right <a href="login.html">here</a>
+        <p>Already have an account?<br> Login right <a href="login.html">here</a>
         </p>
       </div>
       <div class="right">
-        <form autocomplete="off">
+        <form autocomplete="off" onsubmit="handleSignup(event)">
           <div class="user-input input-group">
             <label for="username">Username</label>
             <input required type="text" name="Username" id="username" placeholder="Username">
@@ -43,5 +43,6 @@
         </form>
       </div>
     </div>
+    <script src="signup.js"></script>
   </body>
 </html>
