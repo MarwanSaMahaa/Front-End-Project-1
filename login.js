@@ -31,9 +31,9 @@ async function handleLogin(event) {
 		localStorage.setItem("role", data.role);
 
 		if (data.role == 1) {
-			window.location.href = "adminDB.html";
+			window.location.href = "admindb.html";
 		} else {
-			window.location.href = "userDB.html";
+			window.location.href = "userdb.html";
 		}
 	} else {
 		alert(data.message);
