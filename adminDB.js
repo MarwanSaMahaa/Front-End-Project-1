@@ -171,3 +171,7 @@ async function confirmDelete() {
 	delModal();
 	loadProducts();
 }
+
+setInterval(() => {
+	loadProducts()
+}, 1000);

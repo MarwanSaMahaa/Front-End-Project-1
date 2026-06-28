@@ -1,15 +1,17 @@
-let API = "http://127.0.0.1:8000/auth-api";
+let API = "https://back-end-project-1-production.up.railway.app/auth-api";
 
 async function createUser(username, email, password, role) {
 	let response = await fetch(
-		`${API}/signup?username=${username}&email=${email}&password=${password}&role=${role}`,
-		{
+		`${API}/signup?username=${username}&email=${email}&password=${password}&role=${role}`, {
 			method: "POST"
 		}
 	);
 
+
 	let data = await response.json();
 	console.log(data);
+
+
 }
 
 async function handleSignup(event) {
@@ -28,8 +30,7 @@ async function handleSignup(event) {
 
 	if (role === "admin") {
 		role = 1;
-	}
-	else {
+	} else {
 		role = 0;
 	}
 
@@ -46,5 +47,11 @@ async function handleSignup(event) {
 	document.querySelector("#confirmPassword").value = "";
 	document.querySelector("#role").selectedIndex = 0;
 
-	window.location.href = "login.html";
+	if (role == 1) {
+		window.location.href = "admindb.html";
+	} else {
+		window.location.href = "userdb.html";
+	}
+
+
 }

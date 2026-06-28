@@ -2,8 +2,7 @@ let API = "https://back-end-project-1-production.up.railway.app/auth-api";
 
 async function loginUser(username, password) {
 	let response = await fetch(
-		`${API}/login?username=${username}&password=${password}`,
-		{
+		`${API}/login?username=${username}&password=${password}`, {
 			method: "POST"
 		}
 	);
@@ -31,9 +30,12 @@ async function handleLogin(event) {
 		localStorage.setItem("email", data.email);
 		localStorage.setItem("role", data.role);
 
-		window.location.href = "index.html";
-	}
-	else {
+		if (data.role == 1) {
+			window.location.href = "adminDB.html";
+		} else {
+			window.location.href = "userDB.html";
+		}
+	} else {
 		alert(data.message);
 	}
 }
